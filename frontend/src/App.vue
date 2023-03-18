@@ -1,12 +1,12 @@
 <template>
   <div id="app">
-    <h1>Toyota Incubation Portal</h1>
-    <CHeaderNav class="sticky-top">
-      <CNavItem v-for="(tab, index) in tabs" :key="index">
-        <!-- <CNavLink :to="tab.name" exact @click="activeTab = tab.name">{{ tab.name }}</CNavLink> -->
+    <DefaultHeader/>
+    <!-- <h1>Toyota Incubation Portal</h1>
+    <CHeaderNav class="header-nav">
+      <CNavItem v-for="(tab, index) in tabs" :key="index" class="nav-item">
         <CNavbarBrand :href="tab.label" @click="activeTab = tab.name">{{ tab.name }}</CNavbarBrand>
       </CNavItem>
-    </CHeaderNav>
+    </CHeaderNav> -->
 
     <div class="tab-content" style="padding-top: 70px;" v-for="(tab, index) in tabs" :key="index" v-show="activeTab === tab.name">
       <h1>{{ activeTab }} Content</h1>
@@ -19,15 +19,16 @@
 
 <script>
 // import MetamaskLogin from './components/MetamaskLogin.vue'
-// import DefaultHeader from "./components/DefaultHeader.vue"
+import DefaultHeader from "./components/DefaultHeader.vue"
 // import MainHeader from './components/MainHeader.vue'
 
-import { CNavbarBrand } from '@coreui/vue';
+// import { CNavbarBrand } from '@coreui/vue';
 
 export default {
   name: 'App',
   components: {
-    CNavbarBrand
+    DefaultHeader
+    // CNavbarBrand
 },
   data() {
     return {
@@ -61,5 +62,21 @@ export default {
 
 .tab-content {
   margin-top: 10px;
+}
+
+.header-nav {
+  background-color: #007bff;
+  color: #fff;
+  padding: 0.5rem;
+}
+
+.nav-item {
+  cursor: pointer;
+  font-weight: bold;
+  margin-right: 1rem;
+}
+
+.nav-item.active {
+  border-bottom: 2px solid #fff;
 }
 </style>
