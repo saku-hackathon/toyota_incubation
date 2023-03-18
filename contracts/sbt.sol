@@ -41,6 +41,7 @@ contract Sbt is ERC721Enumerable, Ownable {
   }
 
   // internal
+  // NFTの画像
   function _baseURI() internal view virtual override returns (string memory) {
     return baseURI;
   }
