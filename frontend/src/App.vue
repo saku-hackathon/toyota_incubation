@@ -1,40 +1,41 @@
 <template>
   <div id="app">
-    <DefaultHeader/>
+    <h1>Toyota Incubation Portal</h1>
     <CHeaderNav class="sticky-top">
       <CNavItem v-for="(tab, index) in tabs" :key="index">
-        <CNavLink :to="tab.name" exact @click="activeTab = tab.name">{{ tab.name }}</CNavLink>
+        <!-- <CNavLink :to="tab.name" exact @click="activeTab = tab.name">{{ tab.name }}</CNavLink> -->
+        <CNavbarBrand :href="tab.label" @click="activeTab = tab.name">{{ tab.name }}</CNavbarBrand>
       </CNavItem>
     </CHeaderNav>
 
     <div class="tab-content" style="padding-top: 70px;" v-for="(tab, index) in tabs" :key="index" v-show="activeTab === tab.name">
-      <h1>{{ tab.name }} Content</h1>
+      <h1>{{ activeTab }} Content</h1>
     </div>
-    <router-view></router-view>
+    <router-view/>
     <!-- <MainHeader/> -->
-    <MetamaskLogin/>
+    <!-- <MetamaskLogin/> -->
   </div>
 </template>
 
 <script>
-import MetamaskLogin from './components/MetamaskLogin.vue'
+// import MetamaskLogin from './components/MetamaskLogin.vue'
 // import DefaultHeader from "./components/DefaultHeader.vue"
 // import MainHeader from './components/MainHeader.vue'
+
+import { CNavbarBrand } from '@coreui/vue';
 
 export default {
   name: 'App',
   components: {
-    MetamaskLogin,
-    // DefaultHeader
-    // MainHeader
-  },
+    CNavbarBrand
+},
   data() {
     return {
       activeTab: 'tab1',
       tabs: [
-        { name: 'tab1', label: 'Tab 1' },
         { name: 'Projects', label: 'Projects' },
-        { name: 'tab3', label: 'Tab 3' }
+        { name: 'Launch Project', label: 'Launch' },
+        { name: 'My Page', label: 'MyPage' }
       ]
     }
   }

@@ -6,11 +6,13 @@ import { CHeaderNav, CNavItem, CNavLink } from '@coreui/vue'
 // import { BootstrapVue, IconsPlugin } from 'bootstrap-vue' 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import router from './router'
 
 const app = createApp(App)
 
 app.component('CHeaderNav', CHeaderNav)
 app.component('CNavItem', CNavItem)
 app.component('CNavLink', CNavLink)
+app.use(router)
 
 app.mount('#app')

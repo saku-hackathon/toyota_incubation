@@ -5,7 +5,7 @@
       <router-link :to="{ name: 'Project', params: { projectName: list.name } }">{{ list.label }}</router-link>
     </div>
   </div>
-  <ProjectList :projects="projects" />
+  <ProjectList :projects="projects"/>
 </template>
 
 <script>
@@ -21,7 +21,7 @@ export default {
         { name: 'Project 2', receive_address: '0x0987654321' },
         { name: 'Project 3', receive_address: '0xabcdef1234' },
       ],
-      contract: "0x67aB4032a879E4a13860fa3b1050e09d57450FdA"
+      contract_address: "0x67aB4032a879E4a13860fa3b1050e09d57450FdA"
     }
   },
   components: {

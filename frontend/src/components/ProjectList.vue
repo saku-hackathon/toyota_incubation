@@ -1,7 +1,6 @@
 <template>
     <div>
-      <h2>Project List</h2>
-  
+      <p>Click on a project to enter a quantity</p>
       <ul>
         <li v-for="(project, index) in projects" :key="index">
           <a href="#" @click.prevent="showModal(project)">{{ project.name }}</a>
@@ -29,30 +28,30 @@
 import Modal from '@/components/Modal.vue'
 
 export default {
-name: 'ProjectList',
-components: { Modal },
-props: {
-    projects: { type: Array, required: true },
-},
-data() {
-    return {
-    showingModal: false,
-    selectedProject: null,
-    quantity: null,
-    }
-},
-methods: {
-    showModal(project) {
-    this.selectedProject = project
-    this.showingModal = true
-    },
-    closeModal() {
-    this.showingModal = false
-    },
-    submitForm() {
-    // Execute RPC method on the shibuya chain here using this.selectedProject.contract and this.quantity
-    this.showingModal = false
-    },
-},
+  name: 'ProjectList',
+  components: { Modal },
+  props: {
+      projects: { type: Array, required: true },
+  },
+  data() {
+      return {
+      showingModal: false,
+      selectedProject: null,
+      quantity: null,
+      }
+  },
+  methods: {
+      showModal(project) {
+      this.selectedProject = project
+      this.showingModal = true
+      },
+      closeModal() {
+      this.showingModal = false
+      },
+      submitForm() {
+      // Execute RPC method on the shibuya chain here using this.selectedProject.contract and this.quantity
+      this.showingModal = false
+      },
+  },
 }
 </script>
