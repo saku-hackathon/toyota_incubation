@@ -18,7 +18,7 @@ There are two contracts to participate toyota_incubation app.
   - https://shibuya.subscan.io/account/0x67ab4032a879e4a13860fa3b1050e09d57450fda?tab=contract  
   - https://blockscout.com/shibuya/address/0x67aB4032a879E4a13860fa3b1050e09d57450FdA  
   
-# Running localy
+# Running locally
 move frontend directory `cd frontend`  
 run local server`npm run serve`  
 
