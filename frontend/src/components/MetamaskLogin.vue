@@ -1,16 +1,30 @@
 <template>
     <div class="metamask-login">
-      <h1>Metamask Login</h1>
       <p v-if="!isMetamaskInstalled">Please install Metamask to use this feature.</p>
-      <!-- <p v-else-if="!isMetamaskLoggedIn">Please log in to Metamask to use this feature.</p> -->
-      <button v-else class="btn btn-primary" @click="login()">Connect with Metamask</button>
+      <!-- <div v-if="!isMetamaskLoggedIn"> -->
+        <CButton v-if="!isMetamaskLoggedIn" color="primary" @click="login()">Connect with Metamask</CButton>
+      <!-- </div> -->
+      <div v-else>
+        <p>signed in with Metamask</p>
+        <p>Account: {{ account }}</p>
+      </div>
     </div>
-  </template>
+</template>
   
   <script>
   import Web3 from 'web3';
-  
+  import { CButton } from '@coreui/vue';
+  // import coreui from "coreui/coreui/scss/coreui";
   export default {
+    components: {
+      CButton,
+      // CCard,
+      // CCardBody,
+      // CCardGroup,
+      // CCol,
+      // CContainer,
+      // CRow
+    },
     data() {
       return {
         isMetamaskInstalled: false,
