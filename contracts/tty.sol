@@ -11,7 +11,7 @@ import "@openzeppelin/contracts@4.8.2/token/ERC20/extensions/ERC20Votes.sol";
 import "@openzeppelin/contracts@4.8.2/token/ERC20/extensions/ERC20FlashMint.sol";
 
 /// @custom:security-contact vcurrensayo@gmail.com
-// ERC677のほうが良いかも
+// Actually ERC677 is bettar than this ERC20 because ERC677 is a token standard that allows for the transferAndCall method to be used
 contract ToyotaToken is ERC20, ERC20Burnable, ERC20Snapshot, Ownable, Pausable, ERC20Permit, ERC20Votes, ERC20FlashMint {
     constructor() ERC20("ToyotaToken", "TTY") ERC20Permit("ToyotaToken") {
         _mint(msg.sender, 100000 * 10 ** decimals());
