@@ -1,21 +1,65 @@
 <template>
-    <div>
-      <b-navbar type="dark" variant="dark" fixed="top">
-        <b-navbar-nav>
-          <b-nav-item href="#">Home</b-nav-item>
-          <!-- Navbar dropdowns -->
-          <b-nav-item-dropdown text="Lang" right>
-            <b-dropdown-item href="#">EN</b-dropdown-item>
-            <b-dropdown-item href="#">ES</b-dropdown-item>
-            <b-dropdown-item href="#">RU</b-dropdown-item>
-            <b-dropdown-item href="#">FA</b-dropdown-item>
-          </b-nav-item-dropdown>
-          <b-nav-item-dropdown text="User" right>
-            <b-dropdown-item href="#">Account</b-dropdown-item>
-            <b-dropdown-item href="#">Settings</b-dropdown-item>
-          </b-nav-item-dropdown>
-        </b-navbar-nav>
-      </b-navbar>
-    </div>
+    <h1>Toyota Incubation Portal</h1>
+    <CHeaderNav class="header-nav">
+      <CNavItem v-for="(tab, index) in tabs" :key="index" class="nav-item">
+        <!-- <CNavLink :to="tab.name" exact @click="activeTab = tab.name">{{ tab.name }}</CNavLink> -->
+        <CNavbarBrand :href="tab.label" @click="activeTab = tab.name">{{ tab.name }}</CNavbarBrand>
+      </CNavItem>
+    </CHeaderNav>
 </template>
+
+<script>
+// import MetamaskLogin from './components/MetamaskLogin.vue'
+// import DefaultHeader from "./components/DefaultHeader.vue"
+// import MainHeader from './components/MainHeader.vue'
+
+import { CNavbarBrand } from '@coreui/vue';
+
+export default {
+  name: 'App',
+  components: {
+    CNavbarBrand
+},
+  data() {
+    return {
+      activeTab: 'tab1',
+      tabs: [
+        { name: 'Projects', label: 'Projects' },
+        { name: 'Launch Project', label: 'Launch' },
+        { name: 'My Page', label: 'MyPage' }
+      ]
+    }
+  }
+}
+</script>
+
+<style>
+.sticky-top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.tab-content {
+  margin-top: 10px;
+}
+
+.header-nav {
+  background-color: #007bff;
+  color: #fff;
+  padding: 0.5rem;
+}
+
+.nav-item {
+  cursor: pointer;
+  font-weight: bold;
+  margin-right: 1rem;
+}
+
+.nav-item.active {
+  border-bottom: 2px solid #fff;
+}
+</style>
+
 
