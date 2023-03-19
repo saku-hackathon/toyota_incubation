@@ -1,12 +1,12 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+// import Vue from 'vue'
+// import VueRouter from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import MetamaskLogin from '@/components/MetamaskLogin.vue'
-import HelloWorld from '@/components/HelloWorld.vue'
-import Tab1 from '@/components/Tab1.vue'
-import Projects from '@/components/Projects.vue'
-import Tab3 from '@/components/Tab3.vue'
+import Launch from '@/views/Launch.vue'
+import Projects from '@/views/Projects.vue'
+import MyPage from '@/views/MyPage.vue'
 
-Vue.use(VueRouter)
+// Vue.use(VueRouter)
 
 const routes = [
   {
@@ -15,14 +15,9 @@ const routes = [
     component: MetamaskLogin
   },
   {
-    path: '/about',
-    name: 'About',
-    component: HelloWorld
-  },
-  {
-    path: '/tab1',
-    name: 'Tab1',
-    component: Tab1
+    path: '/launch',
+    name: 'Launch',
+    component: Launch
   },
   {
     path: '/projects',
@@ -30,9 +25,9 @@ const routes = [
     component: Projects
   },
   {
-    path: '/tab3',
-    name: 'Tab3',
-    component: Tab3
+    path: '/mypage',
+    name: 'MyPage',
+    component: MyPage
   }
 ]
 

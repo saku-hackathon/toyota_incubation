@@ -6,7 +6,8 @@
   
   <script>
   export default {
-    name: 'Tab3',
+    // eslint-disable-next-line vue/multi-word-component-names
+    name: 'MyPage',
     props: ['tabName'],
   }
   </script>

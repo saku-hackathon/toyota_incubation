@@ -14,8 +14,8 @@
     "bootstrap-vue": "^2.23.1",
     "core-js": "^3.8.3",
     "vue": "^3.2.47",
-    "web3": "^1.8.2",
-    "vue-router": "3.0.7"
+    "vue-router": "^4.0.13",
+    "web3": "^1.8.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
